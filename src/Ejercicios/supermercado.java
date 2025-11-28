@@ -18,9 +18,15 @@ public class supermercado {
         System.out.print("¿El cliente tiene membresía? (si/no): ");
         String respuesta = scanner.nextLine().toLowerCase();
 
-        boolean tieneMembresia =
+        boolean tieneMembresia = respuesta.equals("si");
 //        4. Calcule el total aplicando los descuentos correspondientes.
-
+        if (tieneMembresia) {
+            total -= total * 0.10;
+        }
+        if (productos >= 10) {
+            total -= total * 0.5;
+        }
 //        5. Muestre el total final a pagar.
+        System.out.println("El total a pagar es: $" + total);
     }
 }
